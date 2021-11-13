@@ -55,7 +55,7 @@ namespace Zadanie1Lab3
             Console.WriteLine(new String('-', 31));
             foreach (int element in array)
             {
-                if (element > 0)
+                if (element >= 0)
                 {
                     Console.Write(element + " ");
                     j++;
