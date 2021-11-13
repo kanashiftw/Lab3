@@ -36,7 +36,7 @@ namespace Zadanie3Lab3
             }
             Console.WriteLine($"Сдвиг на {k} элементов влево");
             k = k % 12;
-            if (k == 0 || k == 12)
+            if (k == 0)
             {
                 foreach (int element in array)
                 {
