@@ -16,11 +16,10 @@ namespace Zadanie5Lab3
                 {
                     array1[i, j] = rand.Next(-10, 10);
                     Console.Write($"{array1[i, j],-3}|");
-                    while (j == 4)
+                    if (j == 4)
                     {
                         Console.WriteLine("");
                         Console.WriteLine(new String('-', 20));
-                        break;
                     }
                 }
             }
@@ -33,11 +32,10 @@ namespace Zadanie5Lab3
                 {
                     array2[i, j] = rand.Next(-10, 10);
                     Console.Write($"{array2[i, j],-3}|");
-                    while (j == 4)
+                    if (j == 4)
                     {
                         Console.WriteLine("");
                         Console.WriteLine(new String('-', 20));
-                        break;
                     }
                 }
             }
@@ -50,11 +48,10 @@ namespace Zadanie5Lab3
                 {
                     arrayproizv[i, j] = array1[i, j] * array2[i, j];
                     Console.Write($"{arrayproizv[i, j],-3}|");
-                    while (j == 4)
+                    if (j == 4)
                     {
                         Console.WriteLine("");
                         Console.WriteLine(new String('-', 20));
-                        break;
                     }
                 }
             }
