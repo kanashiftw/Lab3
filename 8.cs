@@ -9,11 +9,10 @@ namespace Zadanie8Lab3
             int [,] result = new int[myArray.GetLength(0) - 1, myArray.GetLength(0) - 1];
             for (int i = 1; i < myArray.GetLength(0); i++)
             {
-                for (int j = 0, col = 0; j < myArray.GetLength(1); j++)
+                for (int j = 0; j < myArray.GetLength(1); j++)
                 {
                     if (j == n) continue;
-                    result[i - 1, col] = myArray[i, j];
-                    col++;
+                    result[i - 1, j] = myArray[i, j];;
                 }
             }
             return result;
@@ -40,7 +39,7 @@ namespace Zadanie8Lab3
             {
                 try
                 {
-                    Console.WriteLine("Введите размерность матрицы.");
+                    Console.WriteLine("Введите кол-во строк матрицы.");
                     i = int.Parse(Console.ReadLine());
                 }
                 catch (OverflowException)
@@ -52,9 +51,27 @@ namespace Zadanie8Lab3
                 {
                     Console.WriteLine("Вы ввели не число.");
                     continue;
-                } break;
+                } break;              
             }
-            j = i;
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Введите кол-во столбцов матрицы.");
+                    j = int.Parse(Console.ReadLine());
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Такое число нельзя обработать");
+                    continue;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Вы ввели не число.");
+                    continue;
+                }
+                break;
+            }
             int[,]array = new int[i,j];
             Console.WriteLine(array.GetLength(0));
             Random rand = new Random();
