@@ -1,6 +1,19 @@
 package com.company;
 
 public class Main {
+    public static int[][]rotate(int[][]array,int i, int j, int k){
+        int last = array.length - 1;
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 6 - i * 2; j++) {
+                k = array[i][j + i];
+                array[i][j + i] = array[last - j - i][i];
+                array[last - j - i][i] = array[last - i][last - j - i];
+                array[last - i][last - j - i] = array[j + i][last - i];
+                array[j + i][last - i] = k;
+            }
+        }
+        return array;
+    }
     public static void main(String[] args) {
         int i, j, k;
         System.out.println("Массив:");
@@ -14,16 +27,7 @@ public class Main {
         }
         System.out.println(" ");
         System.out.println("Поворот на 90°:");
-        int last = array.length - 1;
-        for (i = 0; i < 3; i++) {
-            for (j = 0; j < 6 - i * 2; j++) {
-                k = array[i][j + i];
-                array[i][j + i] = array[last - j - i][i];
-                array[last - j - i][i] = array[last - i][last - j - i];
-                array[last - i][last - j - i] = array[j + i][last - i];
-                array[j + i][last - i] = k;
-            }
-        }
+        rotate(array,0,0,0);
         for (i = 0; i < array.length; i++)
         {
             System.out.println(" ");
